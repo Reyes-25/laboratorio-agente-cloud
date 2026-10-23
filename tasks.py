@@ -21,6 +21,13 @@ def completar_tarea(tareas, tarea_id):
             return tarea
     raise ValueError("Tarea no encontrada")
 
+def eliminar_tarea(tareas, tarea_id):
+    for indice, tarea in enumerate(tareas):
+        if tarea["id"] == tarea_id:
+            del tareas[indice]
+            return tarea
+    raise ValueError("Tarea no encontrada")
+
 def pendientes(tareas, categoria=None):
     tareas_pendientes = [t for t in tareas if not t["completada"]]
     if categoria is not None:
