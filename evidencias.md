@@ -15,8 +15,6 @@
 
 **Explicación breve:** Creé los archivos `tasks.py`, `app.py` y `tests/test_tasks.py` directamente desde la web de GitHub, usando el código proporcionado en el PDF.
 
-*(Sin captura — son archivos de código)*
-
 ---
 
 ## Paso 7 y 8: Crear el Issue con objetivo, alcance, restricciones, criterios y validación
@@ -60,10 +58,10 @@
 **Explicación breve:** Revisé el diff y confirmé que el agente solo tocó `tasks.py`, `app.py` y `tests/test_tasks.py`. Agregó el parámetro `categoria` a `agregar_tarea`, implementó el filtrado en `pendientes` y agregó las pruebas correspondientes. No agregó dependencias externas.
 
 **Capturas del diff:**
-![Diff tasks 1](evidencias/14a_diff_tasks_parte1.png)
-![Diff tasks 2](evidencias/14b_diff_tasks_parte2.png)
-![Diff tests](evidencias/14c_diff_tests.png)
-![Diff app](evidencias/14d_diff_app.png)
+![Diff tasks 1](evidencias/14a_diff_tests.png)
+![Diff tasks 2](evidencias/14b_diff_app.png)
+![Diff tests](evidencias/14c_diff_tasks_parte1.png)
+![Diff app](evidencias/14d_diff_tasks_parte2.png)
 
 ---
 
@@ -81,7 +79,7 @@
 **Explicación breve:** Revisando el código, noté que el agente no había agregado una prueba para el caso de filtrar por una categoría que no existe. El código actual devolvería una lista vacía, pero no había una prueba explícita que lo verificara.
 
 **Captura del diff de tests (donde se nota la ausencia de esa prueba):**
-![Caso no cubierto](evidencias/16_caso_no_cubierto.png)
+![Caso no cubierto](evidencias/14a_diff_tests.png)
 
 ---
 
@@ -90,7 +88,8 @@
 **Explicación breve:** Dejé un comentario en el PR mencionando a `@copilot` y pidiendo explícitamente que agregara la prueba faltante, sin cambiar la API ni agregar dependencias. Luego hice clic en "Start new session" para activar al agente.
 
 **Captura del comentario:**
-![Comentario de iteración](evidencias/17_comentario_iteracion.png)
+![Comentario de iteración](evidencias/17a_comentario_iteracion.png)
+![Comentario de iteración copilot trabajando](evidencias/17b_iteracion_copilot_trabajando.png)
 
 ---
 
@@ -123,9 +122,17 @@
 
 ## Paso 22: Revisar la trazabilidad del trabajo
 
-**Explicación breve:** En GitHub quedó registrado todo el proceso: el issue original, la asignación a Copilot, la sesión del agente, los commits, el diff revisado, el comentario de iteración, la segunda iteración y el merge final. Esta trazabilidad es mucho más rica que la de un chat web tradicional.
+**Explicación breve:** GitHub registró todo el ciclo de vida del trabajo delegado. 
+- En la pestaña **Issues**, se ven los dos issues originales con sus asignaciones a Copilot.
+- En la pestaña **Pull requests**, se ven los dos PRs generados por el agente, con sus conversaciones, iteraciones y el merge final.
+- En la pestaña **Agents**, quedó el historial de las sesiones del agente cloud (cuándo empezó, qué archivos leyó, cuánto tardó).
 
-*(Sin captura — es una nota escrita)*
+Esta trazabilidad es mucho más rica que la de un chat web tradicional, donde el historial se pierde o no está vinculado directamente al código.
+
+**Capturas de trazabilidad:**
+![Issues cerrados](evidencias/22a_issues_cerrados.png)
+![Pull requests fusionados](evidencias/22b_pull_requests_merged.png)
+![Historial de agentes](evidencias/22c_historial_agentes.png)
 
 ---
 
@@ -134,20 +141,20 @@
 **Explicación breve:** Creé un segundo issue titulado "Agregar función para eliminar una tarea por ID", con objetivo, alcance, restricciones, criterios y validación. Lo asigné a Copilot y el agente generó el Pull Request #4. Revisé el diff, validé localmente (8 pruebas OK) y fusioné el PR.
 
 **Captura del segundo issue:**
-![Segundo issue](evidencias/23_segundo_issue.png)
+![Segundo issue](evidencias/23a_segundo_issue.png)
 
 **Captura del segundo PR:**
 ![Segundo PR](evidencias/23b_segundo_pr_terminado.png)
 
 **Capturas del diff del segundo PR:**
-![Diff eliminar tasks](evidencias/23a_diff_eliminar_tasks.png)
-![Diff eliminar tests](evidencias/23b_diff_eliminar_tests.png)
+![Diff eliminar tasks](evidencias/23c_diff_eliminar_tests.png)
+![Diff eliminar tests](evidencias/23d_diff_eliminar_tasks.png)
 
 **Captura del merge del segundo PR:**
-![Merge segundo PR](evidencias/23c_merge_segundo_pr.png)
+![Merge segundo PR](evidencias/23e_merge_segundo_pr.png)
 
 **Captura de la validación local del segundo PR:**
-![Validación local segundo PR](evidencias/23d_validacion_local_segundo_pr.png)
+![Validación local segundo PR](evidencias/23f_validacion_local_segundo_pr.png)
 
 ---
 
